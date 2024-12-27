@@ -1,0 +1,107 @@
+[
+  {
+    "name": "Aloe Vera",
+    "waterLevel": 40,
+    "sunlight": 70,
+    "soilType": "Well-drained sandy soil",
+    "details": "A low-maintenance succulent known for its healing properties."
+  },
+  {
+    "name": "Spider Plant",
+    "waterLevel": 50,
+    "sunlight": 50,
+    "soilType": "Well-drained potting mix",
+    "details": "A resilient plant that produces baby plants along its stems."
+  },
+  {
+    "name": "Peace Lily",
+    "waterLevel": 60,
+    "sunlight": 30,
+    "soilType": "Moist, well-draining soil",
+    "details": "A flowering plant that purifies air and thrives in low light."
+  },
+  {
+    "name": "Snake Plant",
+    "waterLevel": 30,
+    "sunlight": 40,
+    "soilType": "Well-drained potting soil",
+    "details": "A hardy plant that tolerates low light and infrequent watering."
+  },
+  {
+    "name": "ZZ Plant",
+    "waterLevel": 20,
+    "sunlight": 30,
+    "soilType": "Well-drained soil",
+    "details": "An easy-care plant with thick, waxy leaves that stores water."
+  },
+  {
+    "name": "Jade Plant",
+    "waterLevel": 30,
+    "sunlight": 60,
+    "soilType": "Well-draining succulent soil",
+    "details": "A succulent plant that symbolizes luck and prosperity."
+  },
+  {
+    "name": "English Ivy",
+    "waterLevel": 40,
+    "sunlight": 50,
+    "soilType": "Rich, moist soil",
+    "details": "A climbing plant known for its air-purifying abilities."
+  },
+  {
+    "name": "Boston Fern",
+    "waterLevel": 70,
+    "sunlight": 40,
+    "soilType": "Moist, well-drained soil",
+    "details": "A humidity-loving plant with feathery fronds."
+  },
+  {
+    "name": "Pothos",
+    "waterLevel": 40,
+    "sunlight": 20,
+    "soilType": "Well-draining potting mix",
+    "details": "A trailing plant that’s nearly impossible to kill."
+  },
+  {
+    "name": "Chinese Money Plant",
+    "waterLevel": 40,
+    "sunlight": 60,
+    "soilType": "Well-draining potting soil",
+    "details": "A compact plant with coin-shaped leaves that’s easy to care for."
+  },
+  {
+    "name": "Bamboo Palm",
+    "waterLevel": 60,
+    "sunlight": 30,
+    "soilType": "Moist, well-draining soil",
+    "details": "A tropical plant that thrives in humidity and low light."
+  },
+  {
+    "name": "Fiddle Leaf Fig",
+    "waterLevel": 50,
+    "sunlight": 70,
+    "soilType": "Well-draining potting soil",
+    "details": "A popular plant with large, violin-shaped leaves."
+  },
+  {
+    "name": "Rubber Plant",
+    "waterLevel": 50,
+    "sunlight": 60,
+    "soilType": "Well-draining potting soil",
+    "details": "A low-maintenance plant with dark, glossy leaves."
+  },
+  {
+    "name": "Philodendron",
+    "waterLevel": 40,
+    "sunlight": 40,
+    "soilType": "Rich, well-drained soil",
+    "details": "A versatile plant that adapts well to indoor environments."
+  },
+  {
+    "name": "Lucky Bamboo",
+    "waterLevel": 70,
+    "sunlight": 20,
+    "soilType": "Water or well-draining soil",
+    "details": "An easy-to-grow plant often associated with good fortune."
+  }
+]
