@@ -8,6 +8,7 @@ import { PlantDetailsProps, EditPlantProps, RootStackParamList } from './types';
 import { useFocusEffect } from '@react-navigation/native';
 import Slider from '@react-native-community/slider'; // Slider bileşenini ekleyin.
 import { Plant } from './types';
+import LightRequirementCircle from './LightRequirementCircle';
 
 
 
@@ -16,6 +17,7 @@ import { Plant } from './types';
 type NavigationProp = NativeStackNavigationProp<RootStackParamList, 'PlantDetails'>;
 
 type PlantDetailsRouteProp = RouteProp<RootStackParamList, 'PlantDetails'>;
+
 
 
 const wateringLevels = ['Very low', 'Low', 'Medium', 'High', 'Very high']; // Slider için seviyeler.
@@ -152,8 +154,11 @@ const PlantDetails: React.FC<PlantDetailsProps> = ({ navigation, route }) => {
           </View>
         </View>
 
-        <Text style={styles.label}>Işık Gereksinimi:</Text>
-        <Text style={styles.value}>{currentPlant.lightRequirement}</Text>
+        <View>
+          <Text style={styles.label}>Light Requirement</Text>
+          <LightRequirementCircle lightRequirement={parseInt(plant.lightRequirement.replace('%', ''), 10)} />
+        </View>
+
 
         <Text style={styles.label}>Açıklama:</Text>
         <Text style={styles.value}>{currentPlant.description || 'Açıklama eklenmedi.'}</Text>

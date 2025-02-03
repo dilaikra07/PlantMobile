@@ -15,6 +15,7 @@ export interface Plant {
   backgroundColor: string;
   backgroundImage: any;
   watering: string;
+  humidity: number;
   lightRequirement: string;
   description: string;
   addedAt: string;

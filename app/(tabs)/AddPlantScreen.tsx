@@ -14,6 +14,7 @@ import {
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RouteProp } from '@react-navigation/native';
 import Slider from '@react-native-community/slider';
+import LightRequirementCircle from './LightRequirementCircle';
 
 type RootStackParamList = {
     Home: undefined;
@@ -44,88 +45,88 @@ interface Props {
 
 const predefinedPlants = [
     {
-        name: 'Monstera',
-        image: require('@/assets/images/monstera.png'),
-        watering: '60%', // Medium
-        lightRequirement: 'Bright indirect light',
-        description: 'Monstera is a tropical plant known for its unique leaf patterns.',
-    },
-    {
-        name: 'Snake Plant',
-        image: require('@/assets/images/snakeplant.png'),
-        watering: '30%', // Low
-        lightRequirement: 'Low to bright indirect light',
-        description: 'Snake Plant is a hardy plant that thrives in almost any condition.',
-    },
-    {
-        name: 'Peace Lily',
-        image: require('@/assets/images/peacelily.png'),
-        watering: '70%', // Medium
-        lightRequirement: 'Low to medium indirect light',
-        description: 'Peace Lily is known for its beautiful white flowers and air-purifying qualities.',
-    },
-    {
         name: 'Aloe Vera',
-        image: require('@/assets/images/aloevera.png'),
+        image: require('../../assets/images/aloevera.png'),
         watering: '20%', // Very Low
-        lightRequirement: 'Bright indirect light',
+        lightRequirement: '80%',
         description: 'Aloe Vera is a succulent plant known for its medicinal properties.',
     },
     {
-        name: 'Cactus',
-        image: require('@/assets/images/kaktus.png'),
-        watering: '10%', // Very Low
-        lightRequirement: 'Full sunlight',
-        description: 'Cactus is a resilient plant that thrives in dry, arid environments.',
-    },
-    {
-        name: 'Orchid',
-        image: require('@/assets/images/orkid.png'),
-        watering: '60%', // Medium
-        lightRequirement: 'Bright indirect light',
-        description: 'Orchids are elegant plants known for their beautiful and intricate flowers.',
-    },
-    {
-        name: 'Daisy',
-        image: require('@/assets/images/papatya.png'),
-        watering: '60%',
-        lightRequirement: 'Full sunlight',
-        description: 'Daisies are cheerful flowers that brighten up any garden or room.',
-    },
-    {
-        name: 'Rose',
-        image: require('@/assets/images/rose.png'),
-        watering: '60%',
-        lightRequirement: 'Full sunlight',
-        description: 'Roses are classic flowers symbolizing love and beauty.',
-    },
-    {
-        name: 'Violet',
-        image: require('@/assets/images/menekse.png'),
-        watering: '60%',
-        lightRequirement: 'Low to medium indirect light',
-        description: 'Violets are small, delicate plants with striking purple flowers.',
-    },
-    {
-        name: 'Kalanchoe',
-        image: require('@/assets/images/kalanchoe.png'),
-        watering: '30%',
-        lightRequirement: 'Bright indirect light',
-        description: 'Kalanchoe is a succulent known for its vibrant and long-lasting flowers.',
-    },
-    {
         name: 'Begonia',
-        image: require('@/assets/images/begonya.png'),
+        image: require('../../assets/images/begonya.png'),
         watering: '60%',
-        lightRequirement: 'Low to medium indirect light',
+        lightRequirement: '50%',
         description: 'Begonias are versatile plants prized for their colorful foliage and flowers.',
     },
     {
-        name: 'Nergis',
-        image: require('@/assets/images/nergis.png'),
+        name: 'Cactus',
+        image: require('../../assets/images/kaktus.png'),
+        watering: '10%', // Very Low
+        lightRequirement: '100%',
+        description: 'Cactus is a resilient plant that thrives in dry, arid environments.',
+    },
+    {
+        name: 'Daisy',
+        image: require('../../assets/images/papatya.png'),
+        watering: '50%',
+        lightRequirement: '100%',
+        description: 'Daisies are cheerful flowers that brighten up any garden or room.',
+    },
+    {
+        name: 'Kalanchoe',
+        image: require('../../assets/images/kalanchoe.png'),
+        watering: '30%',
+        lightRequirement: '80%',
+        description: 'Kalanchoe is a succulent known for its vibrant and long-lasting flowers.',
+    },
+    {
+        name: 'Monstera',
+        image: require('../../assets/images/monstera.png'),
+        watering: '60%', // Medium
+        lightRequirement: '100%',
+        description: 'Monstera is a tropical plant known for its unique leaf patterns.',
+    },
+    {
+        name: 'Daffodil',
+        image: require('../../assets/images/nergis.png'),
+        watering: '50%',
+        lightRequirement: '100%',
+        description: 'Daffodils are hardy spring flowers known for their bright yellow blooms and low-maintenance care.',
+    },
+    {
+        name: 'Orchid',
+        image: require('../../assets/images/orkid.png'),
+        watering: '60%', // Medium
+        lightRequirement: '80%',
+        description: 'Orchids are elegant plants known for their beautiful and intricate flowers.',
+    },
+    {
+        name: 'Peace Lily',
+        image: require('../../assets/images/peacelily.png'),
+        watering: '70%', // Medium
+        lightRequirement: '50%',
+        description: 'Peace Lily is known for its beautiful white flowers and air-purifying qualities.',
+    },
+    {
+        name: 'Rose',
+        image: require('../../assets/images/rose.png'),
         watering: '60%',
-        lightRequirement: 'Low to medium indirect light',
-        description: 'Bengisunun çiçeği',
+        lightRequirement: '100%',
+        description: 'Roses are classic flowers symbolizing love and beauty.',
+    },
+    {
+        name: 'Snake Plant',
+        image: require('../../assets/images/snakeplant.png'),
+        watering: '30%', // Low
+        lightRequirement: '30%',
+        description: 'Snake Plant is a hardy plant that thrives in almost any condition.',
+    },
+    {
+        name: 'Violet',
+        image: require('../../assets/images/menekse.png'),
+        watering: '50%',
+        lightRequirement: '50%',
+        description: 'Violets are small, delicate plants with striking purple flowers.',
     },
 ];
 
@@ -169,6 +170,8 @@ const AddPlantScreen: React.FC<Props> = ({ navigation }) => {
     const [description, setDescription] = useState('');
     const [selectedColor, setSelectedColor] = useState(backgroundColors[0]);
     const [selectedImage, setSelectedImage] = useState<any>(null);
+    const [customPlantId, setCustomPlantId] = useState<string | null>(null);
+
 
     const handleSliderChange = (value: number) => {
         setWatering(value); // Slider değeri bir sayı olarak ayarlanır
@@ -189,20 +192,35 @@ const AddPlantScreen: React.FC<Props> = ({ navigation }) => {
             return;
         }
 
-        const newPlant: Plant = {
-            id: Date.now().toString(),
-            name,
-            image: selectedImage, // Görsel kaydediliyor
-            backgroundColor: selectedColor, // Arka plan rengi kaydediliyor
-            backgroundImage: selectedImage, // Arka plan resmi kaydediliyor
-            watering: `${watering}%`,
-            lightRequirement,
-            description,
-        };
-
         try {
             const storedPlants = await AsyncStorage.getItem('plants');
-            const plants = storedPlants ? JSON.parse(storedPlants) : [];
+            const plants: Plant[] = storedPlants ? JSON.parse(storedPlants) : [];
+
+            // Kullanılabilir en küçük plantId'yi bul
+            let newPlantId = 1;
+            const existingIds = plants.map((p) => parseInt(p.id, 10));
+            while (existingIds.includes(newPlantId)) {
+                newPlantId++;
+            }
+
+            const newPlant: Plant = {
+                id: newPlantId.toString(), // Bulunan ID atanıyor
+                name,
+                image: selectedImage,
+                backgroundColor: selectedColor,
+                backgroundImage: selectedImage,
+                watering: `${watering}%`,
+                lightRequirement,
+                description,
+            };
+
+            const plantIdToUse = customPlantId ? parseInt(customPlantId, 10) : newPlantId;
+            if (existingIds.includes(plantIdToUse)) {
+                Alert.alert('Hata', 'Bu ID zaten kullanımda. Farklı bir ID seçin.');
+                return;
+            }
+
+
             const updatedPlants = [...plants, newPlant];
             await AsyncStorage.setItem('plants', JSON.stringify(updatedPlants));
             Alert.alert('Başarılı', `${name} başarıyla eklendi!`);
@@ -216,8 +234,9 @@ const AddPlantScreen: React.FC<Props> = ({ navigation }) => {
 
 
     return (
-        <ScrollView style={styles.container}>
-            <View style={styles.container}>
+        <View style={styles.container}>
+            <ScrollView style={styles.container}>
+
                 <Text style={styles.header}>Add a plant</Text>
 
                 {/* Plant Name Input */}
@@ -259,13 +278,12 @@ const AddPlantScreen: React.FC<Props> = ({ navigation }) => {
                 </View>
 
                 {/* Light Requirement */}
-                <Text style={styles.label}>Light requirement</Text>
-                <TextInput
-                    style={styles.input}
-                    placeholder="Light requirement"
-                    value={lightRequirement}
-                    onChangeText={setLightRequirement}
-                />
+                <View>
+                    <Text style={styles.label}>Light Requirement</Text>
+                    <LightRequirementCircle lightRequirement={parseInt(lightRequirement.replace('%', ''), 10)} />
+                </View>
+
+
 
                 {/* Description */}
                 <Text style={styles.label}>Description</Text>
@@ -275,6 +293,14 @@ const AddPlantScreen: React.FC<Props> = ({ navigation }) => {
                     value={description}
                     onChangeText={setDescription}
                     multiline
+                />
+
+                <Text style={styles.label}>Plant ID (Optional)</Text>
+                <TextInput
+                    style={styles.input}
+                    placeholder="Enter plant ID (or leave blank for auto)"
+                    value={customPlantId || ''}
+                    onChangeText={setCustomPlantId}
                 />
 
                 {/* Background Color Selection */}
@@ -301,6 +327,7 @@ const AddPlantScreen: React.FC<Props> = ({ navigation }) => {
                 <FlatList
                     data={predefinedPlants}
                     horizontal
+                    nestedScrollEnabled
                     keyExtractor={(item) => item.name}
                     renderItem={({ item }) => (
                         <TouchableOpacity
@@ -310,10 +337,7 @@ const AddPlantScreen: React.FC<Props> = ({ navigation }) => {
                             ]}
                             onPress={() => handleSelectImage(item)}
                         >
-                            <Image
-                                source={item.image?.uri ? item.image : { uri: 'https://example.com/placeholder.png' }}
-                                style={styles.image}
-                            />
+                            <Image source={item.image} style={styles.plantImage} />
                             <Text style={styles.imageText}>{item.name}</Text>
                         </TouchableOpacity>
                     )}
@@ -321,15 +345,16 @@ const AddPlantScreen: React.FC<Props> = ({ navigation }) => {
 
                 {/* Action Buttons */}
                 <View style={styles.buttonContainer}>
-                    <TouchableOpacity style={styles.cancelButton}>
+                    <TouchableOpacity style={styles.cancelButton} onPress={() => navigation.goBack()}>
                         <Text style={styles.cancelButtonText}>Cancel</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.saveButton} onPress={handleSave}>
                         <Text style={styles.saveButtonText}>Save</Text>
                     </TouchableOpacity>
                 </View>
-            </View>
-        </ScrollView>
+
+            </ScrollView>
+        </View>
     );
 };
 
@@ -490,7 +515,15 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         color: '#555',
     },
-
+    plantImage: {
+        width: 100,
+        height: 100,
+        borderRadius: 60,
+        backgroundColor: '#fff',
+        borderWidth: 1, // Çerçeve kalınlığı
+        borderColor: '#000', // Siyah çerçeve
+        resizeMode: 'cover',
+    },
 });
 
 export default AddPlantScreen;

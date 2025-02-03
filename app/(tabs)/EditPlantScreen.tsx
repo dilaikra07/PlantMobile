@@ -13,6 +13,7 @@ import { RouteProp } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { PlantDetailsProps, EditPlantProps, RootStackParamList } from './types';
 import Slider from '@react-native-community/slider';
+import LightRequirementCircle from './LightRequirementCircle';
 
 
 
@@ -65,6 +66,7 @@ const backgroundColors = [
 
 const EditPlantScreen: React.FC<EditPlantProps> = ({ navigation, route }) => {
     const { plant } = route.params;
+    const [plantId, setPlantId] = useState(plant.id); // ID'yi düzenlemek için state ekliyoruz
     const [watering, setWatering] = useState<number>(0); // Türü number olarak değiştirin
     const [name, setName] = useState(plant.name);
     const [lightRequirement, setLightRequirement] = useState(plant.lightRequirement);
@@ -80,30 +82,39 @@ const EditPlantScreen: React.FC<EditPlantProps> = ({ navigation, route }) => {
     };
 
     const handleSave = async () => {
-        if (!name || !watering || !lightRequirement) {
+        if (!name || !watering || !lightRequirement || !plantId) {
             Alert.alert('Hata', 'Lütfen tüm zorunlu alanları doldurun!');
             return;
         }
-
-        const updatedPlant: Plant = {
-            ...plant,
-            name,
-            watering: `${watering}%`,
-            lightRequirement,
-            description,
-            backgroundColor: selectedColor,
-            addedAt: ''
-        };
 
         try {
             const storedPlants = await AsyncStorage.getItem('plants');
             const plants: Plant[] = storedPlants ? JSON.parse(storedPlants) : [];
 
-            const updatedPlants = plants.map((p) => (p.id === plant.id ? updatedPlant : p));
-            await AsyncStorage.setItem('plants', JSON.stringify(updatedPlants));
+            // Mevcut ID ile çakışma kontrolü
+            const isIdTaken = plants.some((p) => p.id === plantId && p.id !== plant.id);
+            if (isIdTaken) {
+                Alert.alert('Hata', 'Bu ID başka bir bitki tarafından kullanılıyor.');
+                return;
+            }
 
+            const updatedPlant: Plant = {
+                ...plant,
+                id: plantId, // Yeni ID kaydediliyor
+                name,
+                watering: `${watering}%`,
+                lightRequirement,
+                description,
+                backgroundColor: selectedColor,
+            };
+
+            const updatedPlants = plants.map((p) =>
+                p.id === plant.id ? updatedPlant : p
+            );
+
+            await AsyncStorage.setItem('plants', JSON.stringify(updatedPlants));
             Alert.alert('Başarılı', `${name} başarıyla güncellendi!`);
-            navigation.goBack(); // Kullanıcıyı önceki sayfaya yönlendir
+            navigation.goBack();
         } catch (error) {
             Alert.alert('Hata', 'Bitki güncellenemedi. Lütfen tekrar deneyin.');
             console.error('Error updating plant:', error);
@@ -114,6 +125,16 @@ const EditPlantScreen: React.FC<EditPlantProps> = ({ navigation, route }) => {
         <ScrollView style={styles.container}>
             <View style={styles.container}>
                 <Text style={styles.header}>Edit Plant</Text>
+
+                {/* Plant ID */}
+                <Text style={styles.label}>Plant ID</Text>
+                <TextInput
+                    style={styles.input}
+                    placeholder="Plant ID"
+                    value={plantId}
+                    onChangeText={setPlantId}
+                    keyboardType="numeric" // ID'nin sayısal olması için
+                />
 
                 {/* Plant Name */}
                 <Text style={styles.label}>Plant Name</Text>
@@ -154,13 +175,11 @@ const EditPlantScreen: React.FC<EditPlantProps> = ({ navigation, route }) => {
                 </View>
 
                 {/* Light Requirement */}
-                <Text style={styles.label}>Light Requirement</Text>
-                <TextInput
-                    style={styles.input}
-                    placeholder="Light requirement"
-                    value={lightRequirement}
-                    onChangeText={setLightRequirement}
-                />
+                <View>
+                    <Text style={styles.label}>Light Requirement</Text>
+                    <LightRequirementCircle lightRequirement={parseInt(lightRequirement.replace('%', ''), 10)} />
+                </View>
+
 
                 {/* Description */}
                 <Text style={styles.label}>Description</Text>
