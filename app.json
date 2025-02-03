@@ -1,6 +1,8 @@
 {
   "expo": {
     "name": "plant-app",
+    "newArchEnabled": true,
+    "jsEngine": "jsc",
     "slug": "plant-app",
     "version": "1.0.0",
     "orientation": "portrait",

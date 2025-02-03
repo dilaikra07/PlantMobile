@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
     View,
     Text,
@@ -56,7 +56,6 @@ const backgroundColors = [
     '#F5DEB3', // Wheat
     '#FFFACD', // Lemon Chiffon
     '#FFEFD5', // Papaya Whip
-    '#FFDAB9', // Peach Puff
     '#B0E0E6', // Powder Blue
     '#778899', // Light Slate Gray
     '#708090', // Slate Gray
@@ -66,13 +65,19 @@ const backgroundColors = [
 
 const EditPlantScreen: React.FC<EditPlantProps> = ({ navigation, route }) => {
     const { plant } = route.params;
-
-
+    const [watering, setWatering] = useState<number>(0); // Türü number olarak değiştirin
     const [name, setName] = useState(plant.name);
-    const [watering, setWatering] = useState(plant.watering);
     const [lightRequirement, setLightRequirement] = useState(plant.lightRequirement);
     const [description, setDescription] = useState(plant.description);
     const [selectedColor, setSelectedColor] = useState(plant.backgroundColor);
+
+    useEffect(() => {
+        setWatering(parseInt(plant.watering.replace('%', ''), 10)); // % işaretini kaldır ve sayıya dönüştür
+    }, [plant.watering]);
+
+    const handleSliderChange = (value: number) => {
+        setWatering(value); // Slider değeri bir sayı olarak ayarlanır
+    };
 
     const handleSave = async () => {
         if (!name || !watering || !lightRequirement) {
@@ -83,7 +88,7 @@ const EditPlantScreen: React.FC<EditPlantProps> = ({ navigation, route }) => {
         const updatedPlant: Plant = {
             ...plant,
             name,
-            watering,
+            watering: `${watering}%`,
             lightRequirement,
             description,
             backgroundColor: selectedColor,
@@ -125,24 +130,24 @@ const EditPlantScreen: React.FC<EditPlantProps> = ({ navigation, route }) => {
                     <Slider
                         style={styles.slider}
                         minimumValue={0}
-                        maximumValue={4}
-                        step={1}
-                        value={wateringLevels.indexOf(watering)}
-                        onValueChange={(value) => setWatering(wateringLevels[value])}
+                        maximumValue={100}
+                        step={10}
+                        value={watering}
+                        onValueChange={handleSliderChange}
                         minimumTrackTintColor="#4CAF50"
                         maximumTrackTintColor="#E8E8E8"
                         thumbTintColor="#4CAF50"
                     />
                     <View style={styles.ticksContainer}>
-                        {wateringLevels.map((level, index) => (
+                        {[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100].map((level) => (
                             <Text
-                                key={index}
+                                key={level}
                                 style={[
                                     styles.tickLabel,
-                                    wateringLevels.indexOf(watering) === index && styles.selectedTickLabel,
+                                    watering === level && styles.selectedTick, // Seçili seviyeyi işaretleme
                                 ]}
                             >
-                                {level}
+                                {`${level}%`}
                             </Text>
                         ))}
                     </View>
@@ -248,7 +253,7 @@ const styles = StyleSheet.create({
         fontSize: 12,
         color: '#555',
     },
-    selectedTickLabel: {
+    selectedTick: {
         fontWeight: 'bold',
         color: '#4CAF50',
     },

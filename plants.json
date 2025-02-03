@@ -1,107 +1,79 @@
 [
   {
-    "name": "Aloe Vera",
-    "waterLevel": 40,
-    "sunlight": 70,
-    "soilType": "Well-drained sandy soil",
-    "details": "A low-maintenance succulent known for its healing properties."
-  },
-  {
-    "name": "Spider Plant",
-    "waterLevel": 50,
-    "sunlight": 50,
-    "soilType": "Well-drained potting mix",
-    "details": "A resilient plant that produces baby plants along its stems."
-  },
-  {
-    "name": "Peace Lily",
-    "waterLevel": 60,
-    "sunlight": 30,
-    "soilType": "Moist, well-draining soil",
-    "details": "A flowering plant that purifies air and thrives in low light."
+    "name": "Monstera",
+    "image": "https://drive.google.com/file/d/1VA6CmgGXwXRr5o666VWlw0B9rlt_a3tq/view?usp=drive_link",
+    "watering": "Medium",
+    "lightRequirement": "Bright indirect light",
+    "description": "Monstera is a tropical plant known for its unique leaf patterns."
   },
   {
     "name": "Snake Plant",
-    "waterLevel": 30,
-    "sunlight": 40,
-    "soilType": "Well-drained potting soil",
-    "details": "A hardy plant that tolerates low light and infrequent watering."
+    "image": "https://drive.google.com/file/d/1WtzjP34uK2NOH3lMZYwp1a2FddKGnZWx/view?usp=drive_link",
+    "watering": "Low",
+    "lightRequirement": "Low to bright indirect light",
+    "description": "Snake Plant is a hardy plant that thrives in almost any condition."
   },
   {
-    "name": "ZZ Plant",
-    "waterLevel": 20,
-    "sunlight": 30,
-    "soilType": "Well-drained soil",
-    "details": "An easy-care plant with thick, waxy leaves that stores water."
+    "name": "Peace Lily",
+    "image": "https://drive.google.com/file/d/1xtbR5zoas3OfIsgz3vVegqrEgRROvO7k/view?usp=drive_link",
+    "watering": "Medium",
+    "lightRequirement": "Low to medium indirect light",
+    "description": "Peace Lily is known for its beautiful white flowers and air-purifying qualities."
   },
   {
-    "name": "Jade Plant",
-    "waterLevel": 30,
-    "sunlight": 60,
-    "soilType": "Well-draining succulent soil",
-    "details": "A succulent plant that symbolizes luck and prosperity."
+    "name": "Aloe Vera",
+    "image": "https://drive.google.com/file/d/1vabgp4PW0FLBN0k6A6nq9GVteccH13is/view?usp=drive_link",
+    "watering": "Low",
+    "lightRequirement": "Bright indirect light",
+    "description": "Aloe Vera is a succulent plant known for its medicinal properties."
   },
   {
-    "name": "English Ivy",
-    "waterLevel": 40,
-    "sunlight": 50,
-    "soilType": "Rich, moist soil",
-    "details": "A climbing plant known for its air-purifying abilities."
+    "name": "Cactus",
+    "image": "https://drive.google.com/file/d/19wi20s8O36ywgbm2-e343eRuZgbRTHvR/view?usp=drive_link",
+    "watering": "Very low",
+    "lightRequirement": "Full sunlight",
+    "description": "Cactus is a resilient plant that thrives in dry, arid environments."
   },
   {
-    "name": "Boston Fern",
-    "waterLevel": 70,
-    "sunlight": 40,
-    "soilType": "Moist, well-drained soil",
-    "details": "A humidity-loving plant with feathery fronds."
+    "name": "Orchid",
+    "image": "https://drive.google.com/file/d/1HVGUwZg83WJApCz2Oxj-9BA09opLl5sn/view?usp=drive_link",
+    "watering": "Medium",
+    "lightRequirement": "Bright indirect light",
+    "description": "Orchids are elegant plants known for their beautiful and intricate flowers."
   },
   {
-    "name": "Pothos",
-    "waterLevel": 40,
-    "sunlight": 20,
-    "soilType": "Well-draining potting mix",
-    "details": "A trailing plant that’s nearly impossible to kill."
+    "name": "Daisy",
+    "image": "https://drive.google.com/file/d/1zUZ_rbq810DUVp5sFlwai1H0YVbhZBjF/view?usp=drive_link",
+    "watering": "Medium",
+    "lightRequirement": "Full sunlight",
+    "description": "Daisies are cheerful flowers that brighten up any garden or room."
   },
   {
-    "name": "Chinese Money Plant",
-    "waterLevel": 40,
-    "sunlight": 60,
-    "soilType": "Well-draining potting soil",
-    "details": "A compact plant with coin-shaped leaves that’s easy to care for."
+    "name": "Rose",
+    "image": "https://drive.google.com/file/d/1M5_jZAj551JohOcjO3iAeFtNxu7rirja/view?usp=drive_link",
+    "watering": "Medium",
+    "lightRequirement": "Full sunlight",
+    "description": "Roses are classic flowers symbolizing love and beauty."
   },
   {
-    "name": "Bamboo Palm",
-    "waterLevel": 60,
-    "sunlight": 30,
-    "soilType": "Moist, well-draining soil",
-    "details": "A tropical plant that thrives in humidity and low light."
+    "name": "Violet",
+    "image": "https://drive.google.com/file/d/1VabV5zFUFRV4lrc9DlRKAVKU1NtA7Uzn/view?usp=drive_link",
+    "watering": "Medium",
+    "lightRequirement": "Low to medium indirect light",
+    "description": "Violets are small, delicate plants with striking purple flowers."
   },
   {
-    "name": "Fiddle Leaf Fig",
-    "waterLevel": 50,
-    "sunlight": 70,
-    "soilType": "Well-draining potting soil",
-    "details": "A popular plant with large, violin-shaped leaves."
+    "name": "Kalanchoe",
+    "image": "https://drive.google.com/file/d/1rSud6QMctld6dQnV_6EHHhR2fiWbiEJO/view?usp=drive_link",
+    "watering": "Low",
+    "lightRequirement": "Bright indirect light",
+    "description": "Kalanchoe is a succulent known for its vibrant and long-lasting flowers."
   },
   {
-    "name": "Rubber Plant",
-    "waterLevel": 50,
-    "sunlight": 60,
-    "soilType": "Well-draining potting soil",
-    "details": "A low-maintenance plant with dark, glossy leaves."
-  },
-  {
-    "name": "Philodendron",
-    "waterLevel": 40,
-    "sunlight": 40,
-    "soilType": "Rich, well-drained soil",
-    "details": "A versatile plant that adapts well to indoor environments."
-  },
-  {
-    "name": "Lucky Bamboo",
-    "waterLevel": 70,
-    "sunlight": 20,
-    "soilType": "Water or well-draining soil",
-    "details": "An easy-to-grow plant often associated with good fortune."
+    "name": "Begonia",
+    "image": "https://drive.google.com/file/d/1UH3xv_Q2bZZqWsI7pZ-awd_oucYrDBS2/view?usp=drive_link",
+    "watering": "Medium",
+    "lightRequirement": "Low to medium indirect light",
+    "description": "Begonias are versatile plants prized for their colorful foliage and flowers."
   }
 ]

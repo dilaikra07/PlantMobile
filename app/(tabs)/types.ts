@@ -9,16 +9,18 @@ export type RootStackParamList = {
 };
 
 export interface Plant {
-  [x: string]: any;
   id: string;
   name: string;
-  image: ReturnType<typeof require>;
+  image: any;
   backgroundColor: string;
-  backgroundImage: ReturnType<typeof require>;
+  backgroundImage: any;
   watering: string;
   lightRequirement: string;
   description: string;
+  addedAt: string;
+  logs?: { icon: string; message: string; timestamp: string }[]; // Add logs for plant actions
 }
+
 
 export interface PlantDetailsProps {
   navigation: NativeStackNavigationProp<RootStackParamList, 'PlantDetails'>;
