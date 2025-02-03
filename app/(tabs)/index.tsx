@@ -57,9 +57,9 @@ const HomeScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
 
   useEffect(() => {
     const connectMqtt = () => {
-      const mqttClient = mqtt.connect('wss://ee264bbda6f847bfbd2b0e24d60d56b9.s1.eu.hivemq.cloud:8884/mqtt', {
-        username: 'mobilApp', // HiveMQ Cloud kullanıcı adınız
-        password: 'mobilApp1', // HiveMQ Cloud şifreniz
+      const mqttClient = mqtt.connect('', {
+        username: '', // HiveMQ Cloud kullanıcı adınız
+        password: '', // HiveMQ Cloud şifreniz
         reconnectPeriod: 1000, // Otomatik yeniden bağlanma süresi (ms)
         clean: true, // Temiz oturum
         protocol: 'wss', // WebSocket protokolü
